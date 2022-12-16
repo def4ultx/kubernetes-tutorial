@@ -29,12 +29,11 @@ spec:
             cpu: 150m
             memory: 150Mi
         livenessProbe:
-          exec:
-            command:
-            - cat
-            - /tmp/healthy
-          initialDelaySeconds: 5
-          periodSeconds: 5
+          httpGet:
+            path: /healthz
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 3
         readinessProbe:
           httpGet:
             path: /healthz
@@ -47,6 +46,6 @@ spec:
         startupProbe:
           httpGet:
             path: /healthz
-            port: liveness-port
+            port: 8080
           failureThreshold: 30
           periodSeconds: 10
