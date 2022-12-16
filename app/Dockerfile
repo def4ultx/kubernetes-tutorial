@@ -13,8 +13,8 @@ COPY . /src
 
 ENV GOOS=linux
 ENV CGO_ENABLED=0 
-ENV GOARCH=amd64
-ENV GOAMD64=v4
+# ENV GOARCH=amd64
+# ENV GOAMD64=v4
 RUN --mount=type=cache,target=/root/.cache/go-build \
     go build -o app .
 
