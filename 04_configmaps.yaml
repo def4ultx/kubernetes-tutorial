@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sample-app-config
+  namespace: sample-app-namespace
+data:
+  LOG_LEVEL: "info"

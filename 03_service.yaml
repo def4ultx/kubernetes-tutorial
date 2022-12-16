@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-app-service
+  namespace: sample-app-namespace
+spec:
+  selector:
+    app.kubernetes.io/name: sample-app-deployment
+  ports:
+  - name: sample-app-service
+    protocol: TCP
+    port: 80
+    targetPort: 8080
